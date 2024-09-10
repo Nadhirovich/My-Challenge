@@ -1,2 +1,2 @@
 # My-Challenge
-Documentation of the challenge of CGI
+This repo is made to represent the cgi-challenge
