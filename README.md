@@ -151,4 +151,65 @@ Please run these commands to deploy the “Hello-World” Container:
     kubectl get deployments
     ```
 
+### Expose the Pods to the World
+
+- Now we create a service to access the pods. For this, I created a file called `nginx-service.yaml`.
+
+#### File: **`nginx-service.yaml`**
+
+### Applying the Service and Testing It
+
+Please run these commands to apply the service and test it:
+
+1. **Apply the service configuration:**
+    ```bash
+    kubectl apply -f nginx-service.yaml
+    ```
+
+2. **Verify the service:**
+    ```bash
+    kubectl get svc
+    ```
+
+3. **Get the details of the nginx-service:**
+    ```bash
+    kubectl get svc nginx-service
+    ```
+
+4. **Get the External IP address:**
+    - The `kubectl get svc nginx-service` command will display the details of the service, including the External IP address.
+    - Copy the External IP address and open a web browser.
+    - Navigate to the External IP address to check the welcome message from NGINX.
+
+### Question 3: Autoscaling & Traffic Routing
+
+To achieve autoscaling and traffic routing with round-robin distribution, we will use both the Horizontal Pod Autoscaler (HPA) and a load balancer (service).
+
+#### 1. Horizontal Pod Autoscaler (HPA)
+
+The HPA will automatically scale the number of pod replicas based on CPU utilization or other selected metrics.
+
+#### Steps to Enable HPA:
+
+a. **Enable Metrics Server:**
+
+The Metrics Server is required for HPA to function. Deploy it using the following command:
+```bash
+kubectl apply -f https://github.com/kubernetes-sigs/metrics-server/releases/latest/download/components.yaml
+```
+
+b. **Create HPA:**
+
+We will create a Kubernetes resource of kind HorizontalPodAutoscaler by creating the YAML file named my-hpa.yaml.
+
+#### File: **`my-hpa.yaml`**
+
+Now, Apply the HPA configuration:
+
+ ```bash
+    kubectl apply -f my-hpa.yaml
+    ```
+
+
+
 
