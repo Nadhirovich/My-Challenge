@@ -126,6 +126,6 @@ Here are some commands that we can use to test and verify your EKS cluster:
 
 5. **Describe the EKS cluster:**
     ```bash
-    eksctl get cluster --name <your-cluster-name>
+    eksctl get cluster --name my-eks-cluster
     ```
 
