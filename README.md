@@ -129,3 +129,26 @@ Here are some commands that we can use to test and verify your EKS cluster:
     eksctl get cluster --name my-eks-cluster
     ```
 
+### Question 2: Run a “Hello-World” Container
+
+A container with any webserver technology should be deployed to the cluster. The webserver should be accessible through the challenger's browsers and display a simple webpage with a "Hello World" message.
+
+- For this task, I will deploy a “Hello-World” container using the NGINX web server technology. To achieve this, I will create a Kubernetes deployment using a YAML file named `webserver-deployment.yaml`.
+
+#### File: **`webserver-deployment.yaml`**
+
+### Applying the Deployment
+
+Please run these commands to deploy the “Hello-World” Container:
+
+1. **Apply the deployment configuration:**
+    ```bash
+    kubectl apply -f webserver-deployment.yaml
+    ```
+
+2. **Verify the deployment:**
+    ```bash
+    kubectl get deployments
+    ```
+
+
