@@ -26,7 +26,40 @@ For this challenge, I chose to deploy the Kubernetes (K8s) cluster as a PaaS (Pl
 
 This combination of AWS and Terraform provides a powerful and efficient solution for deploying and managing a Kubernetes cluster, ensuring scalability, reliability, and ease of automation.
 
-#### File: **`main.tf`** [https://github.com/Nadhirovich/My-Challenge]
+### Technical Details
+
+Before running the Terraform code, we need to install both `eksctl` and `kubectl` on our local machine using Git Bash on Windows. Here’s a brief overview of why you need them:
+
+- **eksctl**: This is a command-line tool specifically for creating and managing EKS clusters. It simplifies the process of setting up the cluster.
+- **kubectl**: This is the Kubernetes command-line tool that allows us to interact with our Kubernetes cluster. We will need it to manage and deploy applications on our EKS cluster.
+
+#### Steps to Install `eksctl` and `kubectl` on Git Bash
+
+1. **Install `eksctl`**
+
+    ```bash
+    # Download and install eksctl
+    curl --silent --location "https://github.com/weaveworks/eksctl/releases/download/latest_release/eksctl_$(uname -s)_amd64.tar.gz" | tar xz -C /tmp
+    sudo mv /tmp/eksctl /usr/local/bin
+
+    # Verify the installation
+    eksctl version
+    ```
+
+2. **Install `kubectl`**
+
+    ```bash
+    # Download the latest release of kubectl
+    curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/windows/amd64/kubectl.exe"
+
+    # Move kubectl to a directory in your PATH
+    mkdir -p $HOME/bin && mv ./kubectl.exe $HOME/bin/kubectl.exe && export PATH=$PATH:$HOME/bin
+
+    # Verify the installation
+    kubectl version --client
+    ```
+
+#### File: **`main.tf`**
 
 This Terraform configuration file (**`main.tf`**) is used to deploy an Amazon EKS (Elastic Kubernetes Service) cluster on AWS. The file includes the following resources:
 
@@ -46,3 +79,23 @@ This file defines the input variables used throughout the Terraform configuratio
 #### File: **`outputs.tf`**
 
 This file defines the output values that are useful for referencing the created resources. Outputs can include information such as the VPC ID, subnet IDs, EKS cluster name, and node group name. These outputs provide a convenient way to access and use the resource attributes in other parts of the Terraform configuration or in other Terraform modules.
+
+
+### Deploying the EKS Cluster
+
+Please run these commands to deploy the K8s EKS cluster:
+
+1. **Initialize the Terraform configuration:**
+    ```bash
+    terraform init
+    ```
+
+2. **Create an execution plan and save it to a file:**
+    ```bash
+    terraform plan -out=myplan
+    ```
+
+3. **Apply the execution plan to deploy the resources:**
+    ```bash
+    terraform apply myplan
+    ```
