@@ -20,3 +20,11 @@ This Terraform configuration file (**`main.tf`**) is used to deploy an Amazon EK
 6. **EKS Cluster**: Deploys the EKS cluster and updates the kubeconfig.
 7. **IAM Roles and Policies**: Creates IAM roles and attaches necessary policies for the EKS cluster and node groups.
 8. **EKS Node Group**: Configures the node group for the EKS cluster with scaling settings and instance types.
+#### File: **`variables.tf`**
+
+This file defines the input variables used throughout the Terraform configuration. These variables allow for flexible and reusable code by parameterizing values such as the AWS region, VPC CIDR block, subnet CIDR blocks, availability zones, EKS cluster name, node group name, desired number of nodes, maximum and minimum number of nodes, and instance type for the node group.
+
+#### File: **`outputs.tf`**
+
+This file defines the output values that are useful for referencing the created resources. Outputs can include information such as the VPC ID, subnet IDs, EKS cluster name, and node group name. These outputs provide a convenient way to access and use the resource attributes in other parts of the Terraform configuration or in other Terraform modules.
+
