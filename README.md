@@ -26,7 +26,7 @@ For this challenge, I chose to deploy the Kubernetes (K8s) cluster as a PaaS (Pl
 
 This combination of AWS and Terraform provides a powerful and efficient solution for deploying and managing a Kubernetes cluster, ensuring scalability, reliability, and ease of automation.
 
-#### File: **`main.tf`**
+#### File: **`main.tf`** [https://github.com/HoussemDellai/kubernetes-ingress-tls-ssl-https]
 
 This Terraform configuration file (**`main.tf`**) is used to deploy an Amazon EKS (Elastic Kubernetes Service) cluster on AWS. The file includes the following resources:
 
