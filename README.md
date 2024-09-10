@@ -99,3 +99,33 @@ Please run these commands to deploy the K8s EKS cluster:
     ```bash
     terraform apply myplan
     ```
+
+### Test and Verify Our Cluster Deployment
+
+Here are some commands that we can use to test and verify your EKS cluster:
+
+1. **Check the nodes in the cluster:**
+    ```bash
+    kubectl get nodes
+    ```
+
+2. **Check the pods running in the kube-system namespace:**
+    ```bash
+    kubectl get pods -n kube-system
+    ```
+
+3. **Check the services running in the kube-system namespace:**
+    ```bash
+    kubectl get svc -n kube-system
+    ```
+
+4. **Check the cluster information:**
+    ```bash
+    kubectl cluster-info
+    ```
+
+5. **Describe the EKS cluster:**
+    ```bash
+    eksctl get cluster --name <your-cluster-name>
+    ```
+
