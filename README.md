@@ -1,6 +1,6 @@
 # My-Challenge
 
-This repo is made to represent the cgi-challenge. Part I contains code files for the first four questions, and the second for the rest of the questions.
+This repo is made to represent a personal challenge. Part I contains code files for the first four questions, and the second for the rest of the questions.
 
 ## Part I
 
